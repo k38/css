@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <title>scroll_snap</title>
+  <script src="index.js"></script>
+  <style>
+    body{
+      margin: 0;
+    }
+    .parent{
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+    section{
+      height: 100vh;
+      scroll-snap-align: start;
+      font-size: 10px;
+      position: relative;
+    }
+    section:nth-child(even){
+      background: rgb(240, 240, 240);
+    }
+    .child{
+      position: absolute;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 10px;
+      background: rgb(89, 195, 218);
+      /* transition: all 0.3s ease; */
+      transition-duration: 0.3s;
+      color: white;
+      z-index: 2;
+    }
+    .intersect .child{
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      left: 20px;
+      top: 20px;
+    }
+    .image{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgb(192, 227, 240);
+      left: -150px;
+      top: 0px;
+      transition-duration: 0.5s;
+      transition-delay: 0.2s;
+      /* transition: all 0.3s ease 0.1; */
+    }
+    .intersect .image{
+      left: 0px;
+      top: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <section>
+      <div class="child">1</div>
+      <div class="image"></div>
+    </section>
+    <section>
+      <div class="child">2</div>
+      <div class="image"></div>
+    </section>
+    <section>
+      <div class="child">3</div>
+      <div class="image"></div>
+    </section>
+  </div>
+</body>
+
+</html>
