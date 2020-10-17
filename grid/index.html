@@ -2,13 +2,56 @@
 <html lang="ja">
 
 <head>
-  <title>text_gradient</title>
+  <title>grid</title>
   <!-- <script src="index.js"></script> -->
   <style>
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+    * {box-sizing: border-box;}
+    
+    .wrapper {
+      padding: 10px;
+      border: 2px solid #f76707;
+      border-radius: 5px;
+      background-color: #fff4e6;
+    }
+    
+    .wrapper > div {
+      border: 2px solid #ffa94d;
+      border-radius: 5px;
+      background-color: #ffd8a8;
+      padding: 1em;
+      color: #d9480f;
+    }
+    
+    .wrapper > div:nth-child(1) {
+      grid-column-start: 1; 
+      grid-column-end: 4; 
+      grid-row-start: 1; 
+      grid-row-end: 2;
+    }
+    .wrapper > div:nth-child(2) {
+      grid-column-start: 1; 
+      grid-column-end: 2; 
+      grid-row-start: 2; 
+      grid-row-end: 5;
+    }
   </style>
 </head>
 
 <body>
+  <div class="wrapper">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+    <div>Five</div>
+  </div>
 </body>
 
 </html>
